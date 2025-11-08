@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Nature Nest Event Venue in Eden, NC. Schedule a tour, request information, or get in touch about your upcoming event.">
+  <meta name="keywords" content="contact event venue, Eden NC venue, schedule venue tour, event inquiry">
+
+  <title>Contact Us - Nature Nest Event Venue | Eden, NC</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Configuration -->
+  <script src="config.js"></script>
+</head>
+<body>
+  <!-- Skip to Main Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand" data-business-name>
+        Nature Nest <span>Event Venue</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="weddings.html" class="nav-link">Weddings</a></li>
+        <li><a href="private-events.html" class="nav-link">Private Events</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+
+      <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- PAGE HEADER -->
+    <section class="section" style="padding-top: 120px; background: var(--color-light-gray);">
+      <div class="container text-center fade-in-up">
+        <h1>Get In Touch</h1>
+        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+          Ready to plan your event? We'd love to hear from you. Fill out the form below or
+          contact us directly to schedule a tour or discuss your event needs.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2" style="gap: 4rem; align-items: start;">
+          <!-- CONTACT FORM -->
+          <div class="fade-in-up">
+            <h2>Send Us a Message</h2>
+            <p style="margin-bottom: 2rem;">Fill out the form and we'll get back to you within 24 hours.</p>
+
+            <!-- Success Message -->
+            <div class="form-success" id="form-success">
+              <strong>Thank you for your inquiry!</strong><br>
+              We've received your message and will get back to you within 24 hours.
+            </div>
+
+            <form id="contact-form" novalidate>
+              <!-- Name -->
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  required
+                  placeholder="John Smith"
+                  aria-required="true">
+                <span class="form-error">Please enter your name</span>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  required
+                  placeholder="john@example.com"
+                  aria-required="true">
+                <span class="form-error">Please enter a valid email address</span>
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  required
+                  placeholder="(555) 123-4567"
+                  aria-required="true">
+                <span class="form-error">Please enter a valid phone number</span>
+              </div>
+
+              <!-- Event Date -->
+              <div class="form-group">
+                <label for="event-date" class="form-label">Event Date *</label>
+                <input
+                  type="date"
+                  id="event-date"
+                  name="event-date"
+                  class="form-input"
+                  required
+                  aria-required="true">
+                <span class="form-error">Please select an event date</span>
+              </div>
+
+              <!-- Event Type -->
+              <div class="form-group">
+                <label for="event-type" class="form-label">Event Type *</label>
+                <select
+                  id="event-type"
+                  name="event-type"
+                  class="form-select"
+                  required
+                  aria-required="true">
+                  <option value="">Select an event type</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="corporate">Corporate Event</option>
+                  <option value="birthday">Birthday Party</option>
+                  <option value="anniversary">Anniversary</option>
+                  <option value="shower">Bridal/Baby Shower</option>
+                  <option value="prom">Prom/School Event</option>
+                  <option value="fundraiser">Fundraiser/Gala</option>
+                  <option value="dinner">Private Dinner</option>
+                  <option value="photoshoot">Photoshoot</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="form-error">Please select an event type</span>
+              </div>
+
+              <!-- Guest Count -->
+              <div class="form-group">
+                <label for="guest-count" class="form-label">Estimated Guest Count *</label>
+                <input
+                  type="number"
+                  id="guest-count"
+                  name="guest-count"
+                  class="form-input"
+                  required
+                  min="1"
+                  placeholder="100"
+                  aria-required="true">
+                <span class="form-error">Please enter estimated guest count</span>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <label for="message" class="form-label">Tell Us About Your Event *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  required
+                  placeholder="Please share any details about your event, special requirements, or questions you may have..."
+                  aria-required="true"></textarea>
+                <span class="form-error">Please enter a message</span>
+              </div>
+
+              <!-- Newsletter Opt-in -->
+              <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem;">
+                <input
+                  type="checkbox"
+                  id="newsletter"
+                  name="newsletter"
+                  style="width: auto; margin: 0;">
+                <label for="newsletter" style="margin: 0; font-weight: normal;">
+                  Subscribe to our newsletter for event planning tips and special offers
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
+                Send Message
+              </button>
+
+              <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-dark-gray);">
+                * Required fields
+              </p>
+            </form>
+          </div>
+
+          <!-- CONTACT INFORMATION -->
+          <div class="fade-in-up">
+            <h2>Contact Information</h2>
+
+            <div class="card" style="margin-bottom: 2rem;">
+              <div class="card-content">
+                <h3><i class="fas fa-info-circle" style="color: var(--color-secondary); margin-right: 0.5rem;"></i>Get In Touch</h3>
+
+                <div style="margin-top: 1.5rem;">
+                  <div style="display: flex; align-items: start; gap: 1rem; margin-bottom: 1.5rem;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--color-secondary); font-size: 1.2rem; margin-top: 0.2rem;"></i>
+                    <div>
+                      <strong>Address</strong><br>
+                      <span data-business-address>178 Slaydon Rd<br>Eden, NC 27288</span>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; align-items: start; gap: 1rem; margin-bottom: 1.5rem;">
+                    <i class="fas fa-phone" style="color: var(--color-secondary); font-size: 1.2rem; margin-top: 0.2rem;"></i>
+                    <div>
+                      <strong>Phone</strong><br>
+                      <a href="tel:6142840189" data-business-phone>(614) 284-0189</a>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; align-items: start; gap: 1rem; margin-bottom: 1.5rem;">
+                    <i class="fas fa-envelope" style="color: var(--color-secondary); font-size: 1.2rem; margin-top: 0.2rem;"></i>
+                    <div>
+                      <strong>Email</strong><br>
+                      <a href="mailto:info@naturenestvenue.com" data-business-email>info@naturenestvenue.com</a>
+                    </div>
+                  </div>
+
+                  <div style="display: flex; align-items: start; gap: 1rem;">
+                    <i class="fas fa-clock" style="color: var(--color-secondary); font-size: 1.2rem; margin-top: 0.2rem;"></i>
+                    <div>
+                      <strong>Office Hours</strong><br>
+                      Monday - Friday: 9:00 AM - 5:00 PM<br>
+                      Saturday: By Appointment<br>
+                      Sunday: Closed
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="card">
+              <div class="card-content">
+                <h3><i class="fas fa-share-nodes" style="color: var(--color-secondary); margin-right: 0.5rem;"></i>Follow Us</h3>
+                <p style="margin-bottom: 1rem;">Stay connected and see our latest events!</p>
+
+                <!-- UPDATE: Add your actual social media URLs in config.js -->
+                <div class="social-links">
+                  <a href="#facebook" data-social="facebook" class="social-link" aria-label="Facebook" style="background: var(--color-secondary); color: var(--color-primary);">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#instagram" data-social="instagram" class="social-link" aria-label="Instagram" style="background: var(--color-secondary); color: var(--color-primary);">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#pinterest" data-social="pinterest" class="social-link" aria-label="Pinterest" style="background: var(--color-secondary); color: var(--color-primary);">
+                    <i class="fab fa-pinterest-p"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tour Information -->
+            <div class="card" style="margin-top: 2rem; background: var(--color-light-gray);">
+              <div class="card-content">
+                <h3><i class="fas fa-calendar-check" style="color: var(--color-secondary); margin-right: 0.5rem;"></i>Schedule a Tour</h3>
+                <p>
+                  The best way to experience our venue is in person! We offer private tours
+                  by appointment. During your visit, you'll see our event spaces, discuss your
+                  vision, and learn about our services and packages.
+                </p>
+                <p style="margin-bottom: 0;">
+                  <strong>Call us at <a href="tel:6142840189" data-business-phone>(614) 284-0189</a>
+                  to schedule your tour today!</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOOGLE MAP -->
+    <section class="section" style="padding: 0;">
+      <!-- UPDATE: Replace with your actual Google Maps embed URL in config.js -->
+      <!-- To get your map embed URL:
+           1. Go to https://www.google.com/maps
+           2. Search for your address: 178 Slaydon Rd, Eden, NC 27288
+           3. Click "Share" button
+           4. Click "Embed a map" tab
+           5. Copy the URL from the iframe src attribute
+           6. Update the mapEmbedUrl in config.js
+      -->
+      <iframe
+        id="google-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.123!2d-79.1234!3d36.5678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDM0JzA0LjEiTiA3OcKwMDcnMjQuMyJX!5e0!3m2!1sen!2sus!4v1234567890"
+        width="100%"
+        height="450"
+        style="border:0; display: block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Nature Nest Event Venue Location">
+      </iframe>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section bg-light">
+      <div class="container">
+        <div class="text-center mb-4 fade-in-up">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto;">
+          <div class="card fade-in-up" style="margin-bottom: 1.5rem;">
+            <div class="card-content">
+              <h4 style="color: var(--color-secondary); margin-bottom: 0.5rem;">How far in advance should I book?</h4>
+              <p style="margin: 0;">
+                We recommend booking 6-12 months in advance, especially for popular dates like weekends
+                during spring and fall. However, we sometimes have availability for shorter notice events,
+                so it's always worth contacting us!
+              </p>
+            </div>
+          </div>
+
+          <div class="card fade-in-up" style="margin-bottom: 1.5rem;">
+            <div class="card-content">
+              <h4 style="color: var(--color-secondary); margin-bottom: 0.5rem;">What's included in the venue rental?</h4>
+              <p style="margin: 0;">
+                Our rental includes tables, chairs, linens, basic sound system, lighting, setup and cleanup,
+                and access to our bridal suite. We can also provide recommendations for trusted vendors including
+                caterers, photographers, florists, and entertainment.
+              </p>
+            </div>
+          </div>
+
+          <div class="card fade-in-up" style="margin-bottom: 1.5rem;">
+            <div class="card-content">
+              <h4 style="color: var(--color-secondary); margin-bottom: 0.5rem;">Do you offer catering services?</h4>
+              <p style="margin: 0;">
+                We work with several preferred catering partners who know our venue well. You're also welcome
+                to bring your own licensed caterer. Our commercial kitchen is available for food preparation
+                and service.
+              </p>
+            </div>
+          </div>
+
+          <div class="card fade-in-up" style="margin-bottom: 1.5rem;">
+            <div class="card-content">
+              <h4 style="color: var(--color-secondary); margin-bottom: 0.5rem;">Is there a backup plan for outdoor events?</h4>
+              <p style="margin: 0;">
+                Yes! Our indoor ballroom can accommodate all outdoor events in case of inclement weather.
+                We monitor weather forecasts closely and work with you to make the best decision for your event.
+              </p>
+            </div>
+          </div>
+
+          <div class="card fade-in-up">
+            <div class="card-content">
+              <h4 style="color: var(--color-secondary); margin-bottom: 0.5rem;">Can I bring my own decorations?</h4>
+              <p style="margin: 0;">
+                Absolutely! We encourage you to personalize the space to match your vision. We have some
+                restrictions on certain types of decorations (like open flames or damage-causing items),
+                which we'll discuss during planning. Our team can also help with setup.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="section bg-dark">
+      <div class="container text-center fade-in-up">
+        <h2>Let's Start Planning</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+          We're excited to help make your event extraordinary. Reach out today!
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact-form" class="btn btn-primary">Fill Out Form</a>
+          <a href="tel:6142840189" class="btn btn-outline">Call Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 data-business-name>Nature Nest Event Venue</h3>
+          <p>Creating unforgettable moments for all of life's celebrations. Your premier event venue in Eden, North Carolina.</p>
+          <div class="social-links">
+            <a href="#facebook" data-social="facebook" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#instagram" data-social="instagram" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#pinterest" data-social="pinterest" class="social-link" aria-label="Pinterest">
+              <i class="fab fa-pinterest-p"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="private-events.html">Private Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>
+            <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem; color: var(--color-secondary);"></i>
+            <span data-business-address>178 Slaydon Rd, Eden, NC 27288</span>
+          </p>
+          <p>
+            <i class="fas fa-phone" style="margin-right: 0.5rem; color: var(--color-secondary);"></i>
+            <a href="tel:6142840189" data-business-phone>(614) 284-0189</a>
+          </p>
+          <p>
+            <i class="fas fa-envelope" style="margin-right: 0.5rem; color: var(--color-secondary);"></i>
+            <a href="mailto:info@naturenestvenue.com" data-business-email>info@naturenestvenue.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 <span data-business-name>Nature Nest Event Venue</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="js/navigation.js"></script>
+  <script src="js/form-validation.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Update Google Maps from config -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof siteConfig !== 'undefined' && siteConfig.business.mapEmbedUrl) {
+        document.getElementById('google-map').src = siteConfig.business.mapEmbedUrl;
+      }
+    });
+  </script>
+</body>
+</html>

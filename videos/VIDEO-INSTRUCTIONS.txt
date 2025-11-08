@@ -1,0 +1,47 @@
+HERO VIDEO INSTRUCTIONS
+=======================
+
+To add a hero video to your homepage:
+
+1. DOWNLOAD A FREE VIDEO
+   - Visit https://www.pexels.com/search/videos/wedding%20venue/
+   - Or visit https://pixabay.com/videos/search/event/
+   - Search for: "wedding venue", "event space", "elegant venue"
+   - Download a video you like
+
+2. VIDEO SPECIFICATIONS
+   - Format: MP4 (H.264 codec)
+   - Resolution: 1920x1080 (Full HD) recommended
+   - Duration: 10-30 seconds (shorter is better for loading)
+   - File size: Keep under 10MB if possible
+   - Aspect ratio: 16:9
+
+3. OPTIMIZE YOUR VIDEO
+   - Use a video compressor like HandBrake (free)
+   - Or use online tools like cloudconvert.com
+   - Reduce file size without losing too much quality
+   - Aim for 5-10MB for best performance
+
+4. ADD TO YOUR WEBSITE
+   - Save the video as: hero-background.mp4
+   - Place it in this folder (videos/)
+   - The homepage will automatically use it
+
+5. ALTERNATIVE: USE AN IMAGE INSTEAD
+   - If you prefer a static image instead of video
+   - Edit index.html (line ~95)
+   - Uncomment the <img> tag line
+   - Comment out or remove the <video> tag
+   - Add your image to images/homepage/
+
+IMPORTANT NOTES:
+- Video will not autoplay on some mobile devices (this is intentional for performance)
+- The site will still look great without a video (uses the overlay)
+- You can use multiple videos for different pages
+- Always use royalty-free or licensed videos
+
+RECOMMENDED FREE VIDEO SITES:
+- Pexels.com - Completely free, no attribution required
+- Pixabay.com - Free videos, no attribution required
+- Coverr.co - Free videos for your homepage
+- Videvo.net - Free stock footage

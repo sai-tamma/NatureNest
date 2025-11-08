@@ -1,0 +1,139 @@
+IMAGE ORGANIZATION GUIDE
+========================
+
+This guide helps you organize and add images to your website.
+
+FOLDER STRUCTURE:
+-----------------
+images/
+├── homepage/      - Homepage specific images
+├── weddings/      - Wedding-related photos
+├── events/        - Corporate and social event photos
+└── gallery/       - All gallery images
+
+IMAGE SPECIFICATIONS:
+--------------------
+
+HERO IMAGES (Homepage, Pages)
+- Dimensions: 1920x1080px (minimum)
+- Format: JPG or WebP
+- File size: Under 500KB (use compression)
+- Usage: Background images for hero sections
+
+GALLERY IMAGES
+- Dimensions: 800x600px (minimum), 1200x900px (recommended)
+- Format: JPG or WebP
+- File size: Under 300KB each
+- Usage: Gallery page and gallery previews
+
+CARD IMAGES
+- Dimensions: 600x400px minimum
+- Format: JPG or WebP
+- File size: Under 200KB
+- Usage: Event cards, feature cards
+
+OPTIMIZATION TIPS:
+-----------------
+1. Always compress images before uploading
+   - Use https://tinypng.com/ (free, easy)
+   - Or https://squoosh.app/ (advanced options)
+
+2. Recommended tools:
+   - TinyPNG - Automatic compression
+   - Squoosh - Fine control over quality
+   - ImageOptim (Mac) - Batch processing
+   - RIOT (Windows) - Free image optimizer
+
+3. WebP format:
+   - Modern browsers support WebP
+   - Much smaller file sizes
+   - Better quality than JPG at same size
+   - Convert using squoosh.app
+
+WHERE TO FIND IMAGES:
+--------------------
+
+FREE STOCK PHOTO SITES:
+1. Unsplash.com - High quality, free
+2. Pexels.com - Photos and videos
+3. Pixabay.com - Large variety
+4. Burst.shopify.com - Business focused
+
+SEARCH TERMS:
+- "wedding venue"
+- "event space"
+- "elegant interior"
+- "outdoor ceremony"
+- "banquet hall"
+- "corporate event"
+- "party celebration"
+- "venue details"
+
+HIRING A PHOTOGRAPHER:
+---------------------
+For best results, hire a professional photographer to capture:
+- Empty venue shots (different angles, lighting)
+- Staged event setups
+- Detail shots (tables, décor, lighting)
+- Exterior shots (different times of day)
+- Seasonal variations
+
+USING CLIENT PHOTOS:
+-------------------
+If using photos from actual events:
+- Always get written permission
+- Include model releases if people are identifiable
+- Give photo credits if requested
+- Consider privacy of guests
+
+IMAGE NAMING:
+------------
+Use descriptive, lowercase names:
+✓ Good: wedding-ceremony-outdoor.jpg
+✓ Good: corporate-event-setup.jpg
+✗ Bad: IMG_1234.jpg
+✗ Bad: Photo 1.jpg
+
+CURRENT PLACEHOLDER IMAGES:
+--------------------------
+The website currently uses Unsplash images as placeholders.
+These are for DEMONSTRATION ONLY.
+
+You MUST replace them with:
+- Your own venue photos, OR
+- Properly licensed stock photos, OR
+- Photos from photographers with permission
+
+HOW TO REPLACE IMAGES:
+---------------------
+1. Save your optimized images to appropriate folders
+2. Note the filename (e.g., my-venue-hero.jpg)
+3. Open the HTML file you want to update
+4. Find the <img> tag or background-image
+5. Replace the src or URL with your filename
+6. Example:
+   Old: src="https://images.unsplash.com/photo-..."
+   New: src="images/homepage/my-venue-hero.jpg"
+
+MAINTAINING ALT TEXT:
+--------------------
+Always update alt text to describe YOUR images:
+<img src="images/gallery/my-photo.jpg" alt="Outdoor wedding ceremony at Nature Nest">
+
+Alt text helps with:
+- Accessibility (screen readers)
+- SEO (search engines)
+- User experience (if image fails to load)
+
+CHECKLIST BEFORE GOING LIVE:
+----------------------------
+[ ] All placeholder images replaced
+[ ] Images optimized for web
+[ ] Alt text updated for all images
+[ ] Images properly named
+[ ] File sizes appropriate
+[ ] Images look good on mobile
+[ ] Copyright/licenses verified
+[ ] Backups of original high-res images saved
+
+Need help? See the main README.md for more detailed instructions.
