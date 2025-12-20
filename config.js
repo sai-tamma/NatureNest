@@ -7,11 +7,11 @@
 
 const siteConfig = {
   business: {
-    name: "Nature Nest Event Venue", // UPDATE: Your venue name
+    name: "Wright Memorial Event Center", // UPDATE: Your venue name
     tagline: "Celebrating All Moments That Matter",
-    address: "178 Slaydon Rd, Eden, NC 27288",
-    phone: "(614) 284-0189",
-    email: "info@naturenestvenue.com", // UPDATE: Your email address
+    address: "184 Slaydon Rd, Eden, NC 27288",
+    phone: "336-612-7063",
+    email: "info@wrightmemorialevents.com", // UPDATE: Your email address
 
     // Google Maps Embed URL
     // To get your map URL:
@@ -20,11 +20,11 @@ const siteConfig = {
     // 3. Click "Share" button
     // 4. Click "Embed a map" tab
     // 5. Copy the URL from the iframe src attribute
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.123!2d-79.1234!3d36.5678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDM0JzA0LjEiTiA3OcKwMDcnMjQuMyJX!5e0!3m2!1sen!2sus!4v1234567890" // UPDATE: Your Google Maps embed URL
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3208.0672817376026!2d-79.672782!3d36.48009100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8852c0ea0ae6fbeb%3A0xa47df4e0bc4f9f44!2s184%20Slaydon%20Rd%2C%20Eden%2C%20NC%2027288!5e0!3m2!1sen!2sus!4v1766183330847!5m2!1sen!2sus" // UPDATE: Your Google Maps embed URL
   },
 
   social: {
-    facebook: "https://facebook.com/yourpage", // UPDATE: Your Facebook page URL
+    facebook: "https://www.facebook.com/p/Wright-Memorial-Event-Center-100064101759098/", // UPDATE: Your Facebook page URL
     instagram: "https://instagram.com/yourpage", // UPDATE: Your Instagram profile URL
     pinterest: "https://pinterest.com/yourpage", // UPDATE: Your Pinterest profile URL (optional)
     twitter: "https://twitter.com/yourpage" // UPDATE: Your Twitter profile URL (optional)
