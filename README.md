@@ -1,4 +1,4 @@
-# Nature Nest Event Venue Website
+# Wright Memorial Event Center Website
 
 A professional, responsive event venue website built with modern HTML5, CSS3, and vanilla JavaScript. This website showcases your event venue with beautiful design, smooth animations, and easy customization for non-technical users.
 

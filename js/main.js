@@ -28,7 +28,21 @@ function updateBusinessInfo() {
   // Update phone
   const phones = document.querySelectorAll('[data-business-phone]');
   phones.forEach(el => {
-    el.textContent = config.business.phone;
+    const currentText = el.textContent.trim();
+
+    // Check if the text starts with "Call" to preserve the prefix
+    if (currentText.toLowerCase().startsWith('call')) {
+      // Extract the prefix (e.g., "Call" or "Call Now")
+      const match = currentText.match(/^(call(\s+now)?)\s*/i);
+      if (match) {
+        el.textContent = `${match[1]} ${config.business.phone}`;
+      } else {
+        el.textContent = config.business.phone;
+      }
+    } else {
+      el.textContent = config.business.phone;
+    }
+
     if (el.tagName === 'A') {
       el.href = `tel:${config.business.phone.replace(/\D/g, '')}`;
     }

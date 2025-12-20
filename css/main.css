@@ -193,16 +193,17 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(26, 35, 50, 0.95);
+  background: rgba(248, 249, 250, 0.98);
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 0;
   transition: var(--transition-normal);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled {
   box-shadow: var(--shadow-md);
-  background: rgba(26, 35, 50, 0.98);
+  background: rgba(255, 255, 255, 0.98);
 }
 
 .navbar .container {
@@ -214,12 +215,22 @@ p {
 .navbar-brand {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  color: var(--color-accent);
+  color: #000000;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-brand img {
+  height: 50px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .navbar-brand span {
-  color: var(--color-secondary);
+  color: #000000;
 }
 
 .nav-menu {
@@ -230,7 +241,7 @@ p {
 }
 
 .nav-link {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
@@ -268,7 +279,7 @@ p {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: var(--color-accent);
+  background: var(--color-primary);
   margin: 3px 0;
   transition: var(--transition-normal);
   border-radius: 2px;

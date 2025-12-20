@@ -118,7 +118,7 @@ HOW TO REPLACE IMAGES:
 MAINTAINING ALT TEXT:
 --------------------
 Always update alt text to describe YOUR images:
-<img src="images/gallery/my-photo.jpg" alt="Outdoor wedding ceremony at Nature Nest">
+<img src="images/gallery/my-photo.jpg" alt="Outdoor wedding ceremony at Wright Memorial Event Center">
 
 Alt text helps with:
 - Accessibility (screen readers)
