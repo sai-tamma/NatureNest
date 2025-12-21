@@ -223,14 +223,39 @@ p {
 }
 
 .navbar-brand img {
-  height: 50px;
+  height: 65px;
   width: auto;
   display: block;
   object-fit: contain;
 }
 
-.navbar-brand span {
+.navbar-brand-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: center;
+}
+
+.navbar-brand-name {
+  font-family: 'Georgia', serif;
+  font-size: 1.4rem;
   color: #000000;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.navbar-brand-address {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.navbar-brand-phone {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: #000000;
+  font-weight: 600;
 }
 
 .nav-menu {
