@@ -470,6 +470,26 @@ p {
   flex-wrap: wrap;
 }
 
+/* Hero video styles (for all hero sections) */
+.hero-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Homepage hero style (video with content below) */
 .hero-home {
   display: flex;
@@ -490,6 +510,34 @@ p {
 }
 
 .hero-home .hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Wedding page hero style (video only) */
+.hero-wedding {
+  height: 60vh;
+  min-height: 450px;
+}
+
+.hero-wedding .hero-video-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background: var(--color-primary);
+}
+
+.hero-wedding .hero-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -525,12 +573,14 @@ p {
   color: var(--color-text);
 }
 
-.hero-home .btn-outline {
+.hero-home .btn-outline,
+.hero-intro .btn-outline {
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.hero-home .btn-outline:hover {
+.hero-home .btn-outline:hover,
+.hero-intro .btn-outline:hover {
   background: var(--color-primary);
   color: var(--color-accent);
 }

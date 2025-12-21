@@ -34,7 +34,11 @@
     <div class="container">
       <a href="index.html" class="navbar-brand">
         <img src="images/navicon.png" alt="Wright Memorial Event Center Logo">
-        <span data-business-name>Wright Memorial <span>Event Center</span></span>
+        <div class="navbar-brand-content">
+          <div class="navbar-brand-name" data-business-name>Wright Memorial Event Center</div>
+          <div class="navbar-brand-address" data-business-address>184 Slaydon Rd, Eden, NC 27288</div>
+          <div class="navbar-brand-phone" data-business-phone>336-612-7063</div>
+        </div>
       </a>
 
       <ul class="nav-menu">
@@ -56,22 +60,26 @@
   </nav>
 
   <main id="main-content">
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <!-- UPDATE: Add your wedding venue image -->
-      <!-- Download from: https://unsplash.com/s/photos/wedding-venue or https://www.pexels.com/search/wedding%20venue/ -->
-      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80"
-           alt="Beautiful wedding venue setup"
-           class="hero-image">
+    <!-- HERO VIDEO SECTION -->
+    <section class="hero hero-wedding">
+      <!-- Wedding hero video -->
+      <div class="hero-video-container">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+          <source src="videos/hero-weddingpage.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
 
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-        <h1>Your Dream Wedding Awaits</h1>
-        <p>Say "I do" in a setting as beautiful as your love story</p>
-        <div class="hero-buttons">
-          <a href="contact.html" class="btn btn-primary">Schedule a Tour</a>
-          <a href="gallery.html" class="btn btn-outline">View Wedding Gallery</a>
+    <!-- HERO CONTENT SECTION -->
+    <section class="section hero-intro">
+      <div class="container">
+        <div class="text-center fade-in-up">
+          <h1>Your Dream Wedding Awaits</h1>
+          <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">Say "I do" in a setting as beautiful as your love story</p>
+          <div class="hero-buttons">
+            <a href="contact.html" class="btn btn-primary">Schedule a Tour</a>
+            <a href="gallery.html" class="btn btn-outline">View Wedding Gallery</a>
+          </div>
         </div>
       </div>
     </section>
