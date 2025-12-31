@@ -258,12 +258,15 @@ function initLazyLoading() {
 // VIDEO BACKGROUND OPTIMIZATION
 // ============================================
 function initVideoBackground() {
+  // Video now plays on all devices
+  // Mobile optimization removed to allow video playback in device toolbar mode
   const heroVideo = document.querySelector('.hero-video');
 
-  if (heroVideo && window.innerWidth < 768) {
-    // Pause video on mobile to save bandwidth
-    heroVideo.pause();
-    heroVideo.style.display = 'none';
+  if (heroVideo) {
+    // Ensure video is playing
+    heroVideo.play().catch(() => {
+      console.log('Video autoplay may be blocked by browser');
+    });
   }
 }
 
