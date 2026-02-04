@@ -9,8 +9,8 @@ const siteConfig = {
   business: {
     name: "Wright Memorial Event Center", // UPDATE: Your venue name
     tagline: "Celebrating All Moments That Matter",
-    address: "184 Slaydon Rd, Eden, NC 27288",
-    phone: "336-612-7063",
+    address: "136 Slaydon Rd, Eden, NC 27288",
+    phone: "336-612-7063 | 276-620-7479",
     email: "info@wrightmemorialevents.com", // UPDATE: Your email address
 
     // Google Maps Embed URL
