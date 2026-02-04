@@ -1,11 +1,34 @@
 // ============================================
-// CONTACT FORM HANDLER
+// CONTACT FORM HANDLER WITH EMAILJS
 // ============================================
+//
+// SETUP INSTRUCTIONS:
+// 1. Sign up at https://www.emailjs.com (free - 200 emails/month)
+// 2. Add an Email Service (Gmail, Outlook, etc.)
+// 3. Create an Email Template with these variables:
+//    {{from_name}}, {{from_email}}, {{phone}}, {{event_date}},
+//    {{event_type}}, {{guest_count}}, {{dates_flexible}}, {{budget_range}},
+//    {{extra_services}}, {{interested_tour}}, {{message}},
+//    {{transactional_consent}}, {{marketing_consent}}
+// 4. Update the configuration below with your IDs
+// ============================================
+
+// EmailJS Configuration - UPDATE THESE VALUES
+const EMAILJS_CONFIG = {
+  publicKey: 'YOUR_PUBLIC_KEY',      // Get from EmailJS Dashboard > Account > API Keys
+  serviceId: 'YOUR_SERVICE_ID',       // Get from EmailJS Dashboard > Email Services
+  templateId: 'YOUR_TEMPLATE_ID'      // Get from EmailJS Dashboard > Email Templates
+};
 
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contact-form');
 
   if (!form) return;
+
+  // Initialize EmailJS
+  if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY') {
+    emailjs.init(EMAILJS_CONFIG.publicKey);
+  }
 
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -18,8 +41,13 @@ document.addEventListener('DOMContentLoaded', function() {
       eventDate: document.getElementById('event-date').value,
       eventType: document.getElementById('event-type').value,
       guestCount: document.getElementById('guest-count').value,
+      datesFlexible: document.getElementById('dates-flexible')?.value || '',
+      budgetRange: document.getElementById('budget-range')?.value || '',
+      extraServices: document.getElementById('extra-services')?.value.trim() || '',
+      interestedTour: document.getElementById('interested-tour')?.value || '',
       message: document.getElementById('message').value.trim(),
-      newsletter: document.getElementById('newsletter').checked
+      transactionalConsent: document.getElementById('transactional-consent')?.checked || false,
+      marketingConsent: document.getElementById('marketing-consent')?.checked || false
     };
 
     // Validate form
@@ -27,31 +55,107 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // Get the recipient email from config
-    const recipientEmail = window.siteConfig?.business?.email || 'info@wrightmemorialevents.com';
+    // Check if EmailJS is configured
+    if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY') {
+      // Use EmailJS to send email
+      await sendWithEmailJS(formData);
+    } else {
+      // Fallback to mailto
+      sendWithMailto(formData);
+    }
+  });
 
-    // Create email body
-    const emailSubject = `New Contact Form Submission - ${formData.eventType}`;
-    const emailBody = createEmailBody(formData);
+  async function sendWithEmailJS(data) {
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.innerHTML;
 
-    // Create mailto link
-    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    // Show loading state
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>Sending...';
 
-    // Show success message
-    showMessage('Opening email client...', 'info');
+    const eventTypeLabels = {
+      'wedding': 'Wedding',
+      'corporate': 'Corporate Event',
+      'birthday': 'Birthday Party',
+      'anniversary': 'Anniversary',
+      'shower': 'Bridal/Baby Shower',
+      'prom': 'Prom/School Event',
+      'fundraiser': 'Fundraiser/Gala',
+      'dinner': 'Private Dinner',
+      'photoshoot': 'Photoshoot',
+      'other': 'Other'
+    };
 
-    // Small delay to show the message
-    setTimeout(() => {
-      // Open mailto link
-      window.location.href = mailtoLink;
+    const budgetLabels = {
+      '1500-2500': '$1,500 to $2,500',
+      '2500-5000': '$2,500 to $5,000',
+      '5000-10000': '$5,000 to $10,000',
+      '10000+': '$10,000+'
+    };
 
-      // Reset form
-      form.reset();
+    // Format date
+    const eventDate = new Date(data.eventDate);
+    const formattedDate = eventDate.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    // Prepare template parameters
+    const templateParams = {
+      to_email: 'info@wrightmemorialevents.com',
+      from_name: data.name,
+      from_email: data.email,
+      phone: data.phone,
+      event_date: formattedDate,
+      event_type: eventTypeLabels[data.eventType] || data.eventType,
+      guest_count: data.guestCount,
+      dates_flexible: data.datesFlexible === 'yes' ? 'Yes' : (data.datesFlexible === 'no' ? 'No' : 'Not specified'),
+      budget_range: budgetLabels[data.budgetRange] || 'Not specified',
+      extra_services: data.extraServices || 'None specified',
+      interested_tour: data.interestedTour === 'yes' ? 'Yes' : (data.interestedTour === 'no' ? 'No' : 'Not specified'),
+      message: data.message,
+      transactional_consent: data.transactionalConsent ? 'Yes' : 'No',
+      marketing_consent: data.marketingConsent ? 'Yes' : 'No',
+      submitted_at: new Date().toLocaleString('en-US')
+    };
+
+    try {
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams
+      );
 
       // Show success message
-      showMessage('Thank you! Your email client should open. Please send the email to complete your inquiry.', 'success');
+      showSuccessMessage();
+      form.reset();
+
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      showMessage('There was an error sending your message. Please try again or call us directly.', 'error');
+    } finally {
+      // Restore button
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalText;
+    }
+  }
+
+  function sendWithMailto(data) {
+    const recipientEmail = 'info@wrightmemorialevents.com';
+    const emailSubject = `New Contact Form Submission - ${data.eventType}`;
+    const emailBody = createEmailBody(data);
+    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+    showMessage('Opening email client...', 'info');
+
+    setTimeout(() => {
+      window.location.href = mailtoLink;
+      form.reset();
+      showMessage('Your email client should open. Please send the email to complete your inquiry.', 'success');
     }, 500);
-  });
+  }
 
   function validateForm(data) {
     let isValid = true;
@@ -136,6 +240,13 @@ document.addEventListener('DOMContentLoaded', function() {
       'other': 'Other'
     };
 
+    const budgetLabels = {
+      '1500-2500': '$1,500 to $2,500',
+      '2500-5000': '$2,500 to $5,000',
+      '5000-10000': '$5,000 to $10,000',
+      '10000+': '$10,000+'
+    };
+
     const eventDate = new Date(data.eventDate);
     const formattedDate = eventDate.toLocaleDateString('en-US', {
       weekday: 'long',
@@ -159,20 +270,38 @@ EVENT DETAILS:
 Event Type: ${eventTypeLabels[data.eventType] || data.eventType}
 Event Date: ${formattedDate}
 Estimated Guest Count: ${data.guestCount}
+Dates Flexible: ${data.datesFlexible === 'yes' ? 'Yes' : (data.datesFlexible === 'no' ? 'No' : 'Not specified')}
+Budget Range: ${budgetLabels[data.budgetRange] || 'Not specified'}
+Extra Services Needed: ${data.extraServices || 'None specified'}
+Interested in Tour: ${data.interestedTour === 'yes' ? 'Yes' : (data.interestedTour === 'no' ? 'No' : 'Not specified')}
 
 MESSAGE:
 --------
 ${data.message}
 
-ADDITIONAL INFO:
----------------
-Newsletter Subscription: ${data.newsletter ? 'Yes' : 'No'}
+CONSENT:
+--------
+Transactional Messages: ${data.transactionalConsent ? 'Yes' : 'No'}
+Marketing Messages: ${data.marketingConsent ? 'Yes' : 'No'}
 
 Submitted on: ${new Date().toLocaleString('en-US')}
 
 =================================================
 This inquiry was submitted through the Wright Memorial Event Center website contact form.
     `.trim();
+  }
+
+  function showSuccessMessage() {
+    const successDiv = document.getElementById('form-success');
+    if (successDiv) {
+      successDiv.style.display = 'block';
+      successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Hide after 10 seconds
+      setTimeout(() => {
+        successDiv.style.display = 'none';
+      }, 10000);
+    }
   }
 
   function showMessage(text, type) {
