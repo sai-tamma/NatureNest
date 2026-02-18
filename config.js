@@ -25,7 +25,7 @@ const siteConfig = {
 
   social: {
     facebook: "https://www.facebook.com/p/Wright-Memorial-Event-Center-100064101759098/", // UPDATE: Your Facebook page URL
-    instagram: "https://instagram.com/yourpage", // UPDATE: Your Instagram profile URL
+    instagram: "https://www.instagram.com/wrightmemorialeventcenter/", // UPDATE: Your Instagram profile URL
     pinterest: "https://pinterest.com/yourpage", // UPDATE: Your Pinterest profile URL (optional)
     twitter: "https://twitter.com/yourpage" // UPDATE: Your Twitter profile URL (optional)
   },

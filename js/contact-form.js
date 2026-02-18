@@ -15,9 +15,9 @@
 
 // EmailJS Configuration - UPDATE THESE VALUES
 const EMAILJS_CONFIG = {
-  publicKey: 'YOUR_PUBLIC_KEY',      // Get from EmailJS Dashboard > Account > API Keys
-  serviceId: 'YOUR_SERVICE_ID',       // Get from EmailJS Dashboard > Email Services
-  templateId: 'YOUR_TEMPLATE_ID'      // Get from EmailJS Dashboard > Email Templates
+  publicKey: '0AMzvu5XQ97vUYOBQ',    // Get from EmailJS Dashboard > Account > API Keys
+  serviceId: 'service_e8obffh',      // Get from EmailJS Dashboard > Email Services
+  templateId: 'template_0obfxm2'     // Get from EmailJS Dashboard > Email Templates
 };
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -79,6 +79,8 @@ function updateSocialLinks() {
     socialLinks[platform].forEach(link => {
       if (config.social[platform]) {
         link.href = config.social[platform];
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
       }
     });
   });
