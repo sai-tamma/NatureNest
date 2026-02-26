@@ -20,7 +20,7 @@ const siteConfig = {
     // 3. Click "Share" button
     // 4. Click "Embed a map" tab
     // 5. Copy the URL from the iframe src attribute
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3208.0672817376026!2d-79.672782!3d36.48009100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8852c0ea0ae6fbeb%3A0xa47df4e0bc4f9f44!2s184%20Slaydon%20Rd%2C%20Eden%2C%20NC%2027288!5e0!3m2!1sen!2sus!4v1766183330847!5m2!1sen!2sus" // UPDATE: Your Google Maps embed URL
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3208.0124040402816!2d-79.6747021237145!3d36.48141648560394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8852c0c02d6d0a6b%3A0x7253bc8cc0cd62af!2s136%20Slaydon%20Rd%2C%20Eden%2C%20NC%2027288!5e0!3m2!1sen!2sus!4v1772133057253!5m2!1sen!2sus" // UPDATE: Your Google Maps embed URL
   },
 
   social: {
