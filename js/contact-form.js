@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Format date
-    const eventDate = new Date(data.eventDate);
-    const formattedDate = eventDate.toLocaleDateString('en-US', {
+    //const eventDate = new Date(data.eventDate);
+    const formattedDate = new Date(data.eventDate + "T00:00:00").toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
